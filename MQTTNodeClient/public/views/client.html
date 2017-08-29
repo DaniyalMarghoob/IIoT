@@ -1,0 +1,26 @@
+
+<div class="row"><div class="col-sm-2 col-sm-push-1"> <ul class="breadcrumb"> <li><a href="#/"><i>Home</i></a></li> <li class="active"><i>Locations</i></li></ul> </div></div>
+
+<div class="col-sm-12 col-push-10"><h1><u><i></i></u></a></h1></div>
+<div class="container">
+
+    <div class="row row-header">
+    <div class="col-sm-4 col-sm-push-2">
+        <table><thead><tr><th><i>List of Locations</i></th></tr></thead>
+            <tbody><tr ng-repeat="loc in data | unique:'location' | filter:test | orderBy">
+                <td><a ng-href="#/{{loc.client}}/{{loc.location}}" >{{ loc.location | uppercase }} </span></a></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="col-sm-4 col-sm-push-"><p><b><i>Search Location: </i></b></p>
+        <p><input type="text" ng-model="test"></p>
+    </div>
+
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-danger" ng-click="deleteOneClient()">Delete Client</button>
+        </div>
+</div>
+</div>
+

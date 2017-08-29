@@ -1,0 +1,40 @@
+
+<div class="row"><div class="col-sm-2 col-sm-push-1"><ul class="breadcrumb"><li><a href="#/"><i>Home</i></a></li><li><a href="#/{{clientName}}"><i>Locations</i></a></li><li class="active"><i>Machines</i></li></ul></div></div>
+
+<div class="col-sm-12 col-sm-push-1"><h4><u><i>Client: {{clientName | uppercase}}</i></u></a></h4></div>
+<div class="col-sm-12 col-sm-push-1"><h5><u><i>Location: {{location | uppercase}}</i></u></a></h5></div>
+<div class="col-sm-12 col-sm-push-1"><br></div>
+<div class="container">
+
+    <div class="row ">
+        <div class="col-sm-2">
+            <p><input type="text" ng-model="test" placeholder="Search Serial Number:"></p>
+            <table><thead><tr><th><i>SerialNumbers</i></th><th><i>Machines</i></th></tr></thead>
+                <tbody><tr ng-repeat="sN in data | unique:'serial' | filter:test">
+                    <td><a ng-href="#/{{sN.client}}/{{sN.location}}/{{sN.serial}}" >{{ sN.serial}} </span></a></td>
+                    <td>{{ sN.name}}</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+        <div class="col-sm-6 col-sm-push-1">
+            <table><thead><tr><th><i>Next Maintainance within 7 Days</i></th><th><i>Serial Number</i></th><th><i>Next Machine</i></th></tr></thead>
+                <tbody><tr ng-repeat="d in dd  | unique:'serial'">
+                    <td>{{ d.date | date:"MM/dd/yyyy 'at' hh:mm:ss a"}} </span></a></td>
+                    <td>{{ d.serial}}</td>
+                    <td>{{ d.name}}</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-danger" ng-click="deleteClientLocation()">Delete Location</button>
+        </div>
+
+    </div>
+</div>
+
+{{dani}}

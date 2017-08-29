@@ -1,0 +1,26 @@
+<div class="row"><div class="col-sm-1 col-sm-push-1"><ul class="breadcrumb"><li class="active"><i>Home</i></li></ul> </div></div>
+
+<div class="container">
+
+    <div class="row row-header">
+
+        <div class="col-sm-4 col-sm-push-2">
+            <table><thead><tr><th><i>List of Client Names</i></th></tr></thead>
+                <tbody><tr ng-repeat="d in data | filter:test | orderBy">
+                    <td><a ng-href="#/{{d}}" >{{ d | uppercase }} </span></a></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="col-sm-4 col-sm-push-2"><p><b><i>Search Client Name: </i></b></p>
+            <p><input type="text" ng-model="test"></p>
+        </div>
+
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-danger" ng-click="deleteClients()">Delete All the Clients</button>
+        </div>
+    </div>
+</div>
+
+

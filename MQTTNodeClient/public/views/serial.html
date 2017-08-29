@@ -1,0 +1,55 @@
+<div class="row" xmlns:text-align="http://www.w3.org/1999/xhtml"><div class="col-sm-3 col-sm-push-1"> <ul class="breadcrumb"> <li><a href="#/"><i>Home</i></a></li><li><a href="#/{{clientName}}"><i>Locations</i></a></li><li><a href="#/{{clientName}}/{{location}}"><i>Machines</i></a></li><li class="active"><i>Serial</i></li></ul></div></div>
+
+<div class="col-sm-12 col-sm-push-1"><h4><u><i>Client: {{clientName | uppercase}}</i></u></a></h4></div>
+<div class="col-sm-12 col-sm-push-1"><h4><u><i>Location: {{location | uppercase}}</i></u></a></h4></div>
+<div class="col-sm-12 col-sm-push-1"><h5><u><i>Serial Number: {{serial | uppercase}}</i></u></a></h5></div>
+<div class="col-sm-12 col-sm-push-1"><h5><u><i>Machine: {{counter.name | uppercase}}</i></u></a></h5></div>
+<div class="col-sm-12 col-sm-push-1"><br></div>
+
+
+<div class="col-sm-12 col-sm-pull-2 text-right"><p><u><i>Device Internal temperature: <b>{{counter.cpuTemperature}}</b> °C</i></u></a></p></div>
+<div class="col-sm-12 col-sm-pull-2 text-right"><p><u><i>Machine temperature: <b>{{counter.machineTemperature}}</b> °C</i></u></a></p></div>
+<div class="col-sm-12 col-sm-pull-2 text-right"><p><u><i>Ambiance temperature: <b>{{counter.envTemperature}}</b> °C</i></u></a></p></div>
+
+
+<div class="row row-header ">
+    <div class="col-sm-4 col-sm-push-2">
+        <table><thead><tr><th><i>Maintainance History</i></th></tr></thead>
+            <tbody><tr ng-repeat="h in history">
+                <td>{{ h.updatedAt | date:"MM/dd/yyyy 'at' hh:mm:ss a"}}</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+<div class="col-sm-1"></div>
+
+    <div class="col-sm-5 ">
+        <table>
+            <tbody>
+            <tr><td class="row"><b>Counter Value :</b> {{counter.counter}}</td>
+
+            <tr><td class="row"><button ng-click="reset()"><b>Reset</b></button></td></tr>
+            <tr><td class="row"><b>Service Interval :</b> {{counter.serviceInterval}}</td></tr>
+            <tr><td class="row "><b>Last Maintainance Date: </b>{{last.updatedAt | date:"MM/dd/yyyy 'at' hh:mm:ss a"}}</td></tr>
+            <tr><td class="row "><b>Next Maintainance Date : </b>{{next | date:"MM/dd/yyyy 'at' hh:mm:ss a"}}</td></tr>
+            <td ><b>Predictive Maintainance Date : </b>{{predict | date:"MM/dd/yyyy 'at' hh:mm:ss a"}}</td>
+            <tr><td class="row "><b>Warning Sign:</b> {{warning}}</td></tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-danger" ng-click="deleteSerial()">Delete Serial</button>
+    </div>
+</div>
+
+
+
