@@ -7,8 +7,8 @@ os.system('modprobe w1-therm')
 
 base_dir='/sys/bus/w1/devices/'
 device_folder=glob.glob(base_dir+'28*')[1]
-print('aaaaaaaaaaa')
-#print(str(device_folder))
+
+
 device_file=device_folder+'/w1_slave'
 
 def readTempRaw():
