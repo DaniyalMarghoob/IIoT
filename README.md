@@ -4,7 +4,7 @@ This code is an example of basic understanding of application layer protocols fo
 Code is structured in two directories where MQTTNodeClient represents the server side developement and MQTTPythonClient represents machine side configuration.
 Protocols used for this projects are HTTP and MQTT.
 Languages used for this project are Node.js and Python.
-Server side is based on MVC pattern where as front end is an illustration of SPA.
+Server side is based on MVC pattern and architecture of Express framework where as front end is an illustration of SPA.
 No SQL database is used for data storage.
 
 Modules:
