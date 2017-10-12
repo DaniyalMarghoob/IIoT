@@ -20,3 +20,6 @@ Python: pip install <depency-name> or sudo pip install <depency-name>
 Running:
 Python client starts clientpub.py souce file where as node client starts from www source file present in bin directory.
 To start python client open terminal and type python clientpub.py and to start node client redirect to bin directory in MQTTNodeClient and type node www or start www
+
+
+This is just a little demonstration of Industrial IoT concept for M2M communication, and it can be increased to any level as well as can be used as a template to design a prototype for any industrial solution.
